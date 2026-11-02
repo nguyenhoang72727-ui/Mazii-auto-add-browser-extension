@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <h1>Mazii Auto Add</h1>
+
+    <label class="row">
+      <span>Tự động thêm từ</span>
+      <input type="checkbox" id="enabled" />
+    </label>
+
+    <label class="col">
+      <span>Sổ tay</span>
+      <select id="notebook" disabled>
+        <option value="">Đang tải...</option>
+      </select>
+    </label>
+
+    <p id="status" class="status"></p>
+    <script type="module" src="src/popup/popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Mazii Auto Add",
+  "version": "1.0.0",
+  "description": "Tự động thêm từ vừa tra trên Mazii vào sổ tay đã chọn.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://mazii.net/*", "https://api.mazii.net/*"],
+  "action": { "default_popup": "popup.html", "default_title": "Mazii Auto Add" },
+  "content_scripts": [
+    {
+      "matches": ["https://mazii.net/*"],
+      "js": ["src/content/headerSniffer.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://mazii.net/*"],
+      "js": ["src/content/loader.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    { "resources": ["src/*"], "matches": ["https://mazii.net/*"] }
+  ]
+}
